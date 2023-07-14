@@ -1,0 +1,2483 @@
+{
+	"info": {
+		"_postman_id": "086a9be6-3f17-47fb-9795-4203f382ba0a",
+		"name": "Grocery Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28445549"
+	},
+	"item": [
+		{
+			"name": "Testing examples",
+			"item": [
+				{
+					"name": "EX",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//NOT RECOMEND USING VAR\r",
+									"var firstName = 'Jamie';\r",
+									"console.log(firstName);\r",
+									"\r",
+									"//VARIABLE DEFINITION\r",
+									"let name = 'Nat';\r",
+									"let age = 29;\r",
+									"console.log(name, age);\r",
+									"\r",
+									"let intro = `My name is ${name} and I am ${age} years old`;\r",
+									"console.log(intro);\r",
+									"\r",
+									"//CONSTANTS\r",
+									"const websiteURL = 'example.com';\r",
+									"\r",
+									"//TESTING\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status should be UP\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"UP\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//FUNCTIONS\r",
+									"function sayHello(name){\r",
+									"    console.log('Hello from Postman '+name);\r",
+									"}\r",
+									"sayHello(name);\r",
+									"\r",
+									"function add(a,b){\r",
+									"    let sum = a + b;\r",
+									"    return sum;\r",
+									"}\r",
+									"console.log(add(3,4));\r",
+									"\r",
+									"const suma = (a,b)=> a+b;\r",
+									"\r",
+									"console.log(suma(1,2));\r",
+									"\r",
+									"\r",
+									"//CALLBACK FUNCTION\r",
+									"const announceBreakfast = () =>{\r",
+									"    console.log('Breakfasts is ready');\r",
+									"}\r",
+									"\r",
+									"function makeBreakfast(callbackFunction){\r",
+									"    console.log('Starting to make breakfast');\r",
+									"    callbackFunction();\r",
+									"    console.log('Serving Coffee');\r",
+									"}\r",
+									"\r",
+									"makeBreakfast(announceBreakfast);\r",
+									"\r",
+									"//SET TIMEOUT\r",
+									"setTimeout(announceBreakfast, 5000);\r",
+									"setTimeout(()=>{\r",
+									"    //code here\r",
+									"},1000);\r",
+									"\r",
+									"\r",
+									"//OBJECT\r",
+									"const person = {\r",
+									" firstName:  'Natalia',\r",
+									" lastName: 'Lopez',\r",
+									" age: 26,\r",
+									" isMarried: false,\r",
+									" sayHello: function() { return 'Hello '+this.firstName}\r",
+									"};\r",
+									"\r",
+									"person.email = 'email@example.com';\r",
+									"\r",
+									"console.clear();\r",
+									"console.log(person);\r",
+									"console.log(person.firstName);\r",
+									"console.log(person.sayHello());\r",
+									"\r",
+									"//OBJECT TO JSON\r",
+									"let json = JSON.stringify(person);\r",
+									"let newJson = JSON.parse(json);\r",
+									"console.log(json);\r",
+									"console.log(newJson.firstName);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EX Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//NOT RECOMEND USING VAR\r",
+									"var firstName = 'Jamie';\r",
+									"console.log(firstName);\r",
+									"\r",
+									"//VARIABLE DEFINITION\r",
+									"let name = 'Nat';\r",
+									"let age = 29;\r",
+									"console.log(name, age);\r",
+									"\r",
+									"let intro = `My name is ${name} and I am ${age} years old`;\r",
+									"console.log(intro);\r",
+									"\r",
+									"//CONSTANTS\r",
+									"const websiteURL = 'example.com';\r",
+									"\r",
+									"//TESTING\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status should be UP\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"UP\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//FUNCTIONS\r",
+									"function sayHello(name){\r",
+									"    console.log('Hello from Postman '+name);\r",
+									"}\r",
+									"sayHello(name);\r",
+									"\r",
+									"function add(a,b){\r",
+									"    let sum = a + b;\r",
+									"    return sum;\r",
+									"}\r",
+									"console.log(add(3,4));\r",
+									"\r",
+									"const suma = (a,b)=> a+b;\r",
+									"\r",
+									"console.log(suma(1,2));\r",
+									"\r",
+									"\r",
+									"//CALLBACK FUNCTION\r",
+									"const announceBreakfast = () =>{\r",
+									"    console.log('Breakfasts is ready');\r",
+									"}\r",
+									"\r",
+									"function makeBreakfast(callbackFunction){\r",
+									"    console.log('Starting to make breakfast');\r",
+									"    callbackFunction();\r",
+									"    console.log('Serving Coffee');\r",
+									"}\r",
+									"\r",
+									"makeBreakfast(announceBreakfast);\r",
+									"\r",
+									"//SET TIMEOUT\r",
+									"setTimeout(announceBreakfast, 5000);\r",
+									"setTimeout(()=>{\r",
+									"    //code here\r",
+									"},1000);\r",
+									"\r",
+									"\r",
+									"//OBJECT\r",
+									"const person = {\r",
+									" firstName:  'Natalia',\r",
+									" lastName: 'Lopez',\r",
+									" age: 26,\r",
+									" isMarried: false,\r",
+									" sayHello: function() { return 'Hello '+this.firstName}\r",
+									"};\r",
+									"\r",
+									"person.email = 'email@example.com';\r",
+									"\r",
+									"console.clear();\r",
+									"console.log(person);\r",
+									"console.log(person.firstName);\r",
+									"console.log(person.sayHello());\r",
+									"\r",
+									"//OBJECT TO JSON\r",
+									"let json = JSON.stringify(person);\r",
+									"let newJson = JSON.parse(json);\r",
+									"console.log(json);\r",
+									"console.log(newJson.firstName);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Header Assertion",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"pm.test(\"Ex\", function () {\r",
+									"    pm.expect(pm.response.headers.get('x-powered-by')).to.eql('Express');\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EX Assertions",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"console.log(response.status);\r",
+									"\r",
+									"pm.test('PASS', () => {\r",
+									"    pm.expect(1).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"pm.test('FAIL', () => {\r",
+									"    pm.expect(1).to.eql(2);\r",
+									"});\r",
+									"\r",
+									"pm.test('Status is UP', () => {\r",
+									"    pm.expect(response.status).to.eql('UP');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EX Arrays",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let numbers = [2,6,1,9];\r",
+									"let names = ['Nat','Mey'];\r",
+									"let employees=[];\r",
+									"\r",
+									"const person = {\r",
+									" firstName:  'Natalia',\r",
+									" lastName: 'Lopez',\r",
+									" age: 26,\r",
+									" hobbies: ['travel','yoga']\r",
+									"};\r",
+									"\r",
+									"const person2 = {\r",
+									" firstName:  'Isaac',\r",
+									" lastName: 'Tellez',\r",
+									" age: 31,\r",
+									" hobbies: ['photo','comics']\r",
+									"};\r",
+									"\r",
+									"employees = [person,person2];\r",
+									"\r",
+									"console.log(employees);\r",
+									"\r",
+									"console.log(numbers[1]);\r",
+									"\r",
+									"//EJERCICIO\r",
+									"let numbers2 = [1,2,3,4,5,6,7];\r",
+									"\r",
+									"//agregar valor\r",
+									"numbers2.push(8);\r",
+									"\r",
+									"//borrar ultimo valor\r",
+									"numbers2.pop();\r",
+									"\r",
+									"//borar primer valor\r",
+									"numbers2.shift();\r",
+									"console.log(numbers2);\r",
+									"\r",
+									"let a = [5,55];\r",
+									"a.push(a.shift())\r",
+									"\r",
+									"console.log(a)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EX Complex Data",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();\r",
+									"\r",
+									"console.log(response.Response.Data[0].Results[0].Address.Active);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://run.mocky.io/v3/62aa820c-8e42-43e7-8897-6f154b253711",
+							"protocol": "https",
+							"host": [
+								"run",
+								"mocky",
+								"io"
+							],
+							"path": [
+								"v3",
+								"62aa820c-8e42-43e7-8897-6f154b253711"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EX Complex Data 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"const firstPostalCode = response[0].Item01.Data[0].Results[0].Contact.Address.PostalCode;\r",
+									"console.log(firstPostalCode);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://run.mocky.io/v3/4322dcfc-07cd-4ebd-a45b-8e832a5abf7d",
+							"protocol": "https",
+							"host": [
+								"run",
+								"mocky",
+								"io"
+							],
+							"path": [
+								"v3",
+								"4322dcfc-07cd-4ebd-a45b-8e832a5abf7d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loops",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let numbers = [1,2,3,4,5,6];\r",
+									"\r",
+									"\r",
+									"for(let i=0; i< numbers.length; i++)\r",
+									"console.log(numbers[i]);\r",
+									"\r",
+									"let age = 2;\r",
+									"if(age>18){\r",
+									"    console.log('Adult')\r",
+									"}else{\r",
+									"    console.log('Not adult')\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('Created order in in the list',()=>{\r",
+									"    const response = pm.response.json();\r",
+									"    const lastOrder = pm.collectionVariables.get('orderId');\r",
+									"\r",
+									"    let obj = response.find((order) => order.id ===lastOrder);\r",
+									"    pm.expect(obj).to.be.an('object');\r",
+									"    \r",
+									"   // let isOrderIdInResponse = false;\r",
+									"    //for(let i=0; i<response.length; i++){\r",
+									"        //if(response[i].id==lastOrder) isOrderIdInResponse=true;\r",
+									"    //}\r",
+									"\r",
+									"    /*response.forEach((order)=>{\r",
+									"        if(order.id==lastOrder) isOrderIdInResponse=true;\r",
+									"    });*/\r",
+									"\r",
+									"    //pm.expect(isOrderIdInResponse).to.be.true;\r",
+									"})\r",
+									"\r",
+									"let numbers = [2,3,6,2,7,55];\r",
+									"//numbers.forEach((item)=>{console.log(item);});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"cartId\": \"ygui8QQQkC4DbRrv6Rm3j\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const sampleData = [\r",
+									"    {\r",
+									"        \"name\": \"John Doe\",\r",
+									"        \"yearOfEmployment\": 1995,\r",
+									"        \"isActive\": false\r",
+									"    },\r",
+									"    {\r",
+									"        \"name\": \"Marissa Williams\",\r",
+									"        \"yearOfEmployment\": 2007,\r",
+									"        \"isActive\": true\r",
+									"    },\r",
+									"    {\r",
+									"        \"name\": \"Isabelle Keanna\",\r",
+									"        \"yearOfEmployment\": 2000,\r",
+									"        \"isActive\": true\r",
+									"    },\r",
+									"    {\r",
+									"        \"name\": \"Mark McRolland\",\r",
+									"        \"yearOfEmployment\": 2018,\r",
+									"        \"isActive\": true\r",
+									"    }    \r",
+									"];\r",
+									"function findSeniorEmployees(employees, currentYear) {\r",
+									"    // Implement here your function\r",
+									"    let seniorEmployees = [];\r",
+									"    \r",
+									"    employees.forEach((employee)=>{\r",
+									"        if(employee.isActive){\r",
+									"            if(currentYear-employee.yearOfEmployment>=10) seniorEmployees.push(employee);\r",
+									"        }\r",
+									"        \r",
+									"    });\r",
+									"\treturn seniorEmployees;\r",
+									"}\r",
+									"console.log(findSeniorEmployees(sampleData,2023));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"cartId\": \"ygui8QQQkC4DbRrv6Rm3j\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let numbers = [2,3,6,2,7,55];\r",
+									"\r",
+									"let foundItem = numbers.find((item)=>item ===6);\r",
+									"console.log(foundItem);\r",
+									"\r",
+									"const sampleData = [\r",
+									"    {\r",
+									"        \"name\": \"John Doe\",\r",
+									"        \"yearOfEmployment\": 1995,\r",
+									"        \"isActive\": false\r",
+									"    },\r",
+									"    {\r",
+									"        \"name\": \"Marissa Williams\",\r",
+									"        \"yearOfEmployment\": 2007,\r",
+									"        \"isActive\": true\r",
+									"    },\r",
+									"    {\r",
+									"        \"name\": \"Isabelle Keanna\",\r",
+									"        \"yearOfEmployment\": 2000,\r",
+									"        \"isActive\": true\r",
+									"    },\r",
+									"    {\r",
+									"        \"name\": \"Mark McRolland\",\r",
+									"        \"yearOfEmployment\": 2018,\r",
+									"        \"isActive\": true\r",
+									"    }    \r",
+									"];\r",
+									"\r",
+									"const person2 = sampleData.find((person) => person.name ==='John Doe');\r",
+									"console.log(person2.isActive);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"cartId\": \"ygui8QQQkC4DbRrv6Rm3j\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item in Cart Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"function getRandomNumber(minValue,maxValue){\r",
+									"    return Math.floor(Math.random() * (maxValue-minValue) +minValue);\r",
+									"}\r",
+									"\r",
+									"console.log(getRandomNumber(14));\r",
+									"pm.collectionVariables.set('randomQuantity',getRandomNumber(1,14));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"quantity\": {{randomQuantity}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/carts/:cartId/items/:ietmId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"carts",
+								":cartId",
+								"items",
+								":ietmId"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "{{cartId}}"
+								},
+								{
+									"key": "ietmId",
+									"value": "{{itemId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Global Variables",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set('firstName','Nat');\r",
+									"\r",
+									"console.log(pm.globals.get('firstName','Nat'));\r",
+									"\r",
+									"pm.globals.unset('firstName','Nat');"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status?=",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EX Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//NOT RECOMEND USING VAR\r",
+									"var firstName = 'Jamie';\r",
+									"console.log(firstName);\r",
+									"\r",
+									"//VARIABLE DEFINITION\r",
+									"let name = 'Nat';\r",
+									"let age = 29;\r",
+									"console.log(name, age);\r",
+									"\r",
+									"let intro = `My name is ${name} and I am ${age} years old`;\r",
+									"console.log(intro);\r",
+									"\r",
+									"//CONSTANTS\r",
+									"const websiteURL = 'example.com';\r",
+									"\r",
+									"//TESTING\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status should be UP\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"UP\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//FUNCTIONS\r",
+									"function sayHello(name){\r",
+									"    console.log('Hello from Postman '+name);\r",
+									"}\r",
+									"sayHello(name);\r",
+									"\r",
+									"function add(a,b){\r",
+									"    let sum = a + b;\r",
+									"    return sum;\r",
+									"}\r",
+									"console.log(add(3,4));\r",
+									"\r",
+									"const suma = (a,b)=> a+b;\r",
+									"\r",
+									"console.log(suma(1,2));\r",
+									"\r",
+									"\r",
+									"//CALLBACK FUNCTION\r",
+									"const announceBreakfast = () =>{\r",
+									"    console.log('Breakfasts is ready');\r",
+									"}\r",
+									"\r",
+									"function makeBreakfast(callbackFunction){\r",
+									"    console.log('Starting to make breakfast');\r",
+									"    callbackFunction();\r",
+									"    console.log('Serving Coffee');\r",
+									"}\r",
+									"\r",
+									"makeBreakfast(announceBreakfast);\r",
+									"\r",
+									"//SET TIMEOUT\r",
+									"setTimeout(announceBreakfast, 5000);\r",
+									"setTimeout(()=>{\r",
+									"    //code here\r",
+									"},1000);\r",
+									"\r",
+									"\r",
+									"//OBJECT\r",
+									"const person = {\r",
+									" firstName:  'Natalia',\r",
+									" lastName: 'Lopez',\r",
+									" age: 26,\r",
+									" isMarried: false,\r",
+									" sayHello: function() { return 'Hello '+this.firstName}\r",
+									"};\r",
+									"\r",
+									"person.email = 'email@example.com';\r",
+									"\r",
+									"console.clear();\r",
+									"console.log(person);\r",
+									"console.log(person.firstName);\r",
+									"console.log(person.sayHello());\r",
+									"\r",
+									"//OBJECT TO JSON\r",
+									"let json = JSON.stringify(person);\r",
+									"let newJson = JSON.parse(json);\r",
+									"console.log(json);\r",
+									"console.log(newJson.firstName);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Happy Path",
+			"item": [
+				{
+					"name": "Get Status",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//CREATE COLLECTION VARIABLE\r",
+									"pm.environm.set('firstName','Nat'); \r",
+									"pm.environment.set('firstName','Nat'); \r",
+									"\r",
+									"//according to the scope\r",
+									"console.log(pm.variables.get('baseURL')); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/status?=",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"status"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"clientName\": \"Natalia\",\r\n   \"clientEmail\": \"natalia@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api-clients",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api-clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const response = pm.response.json();\r",
+									"pm.test('At least one available product exists',()=>{\r",
+									"    pm.expect(response).to.be.an('array');\r",
+									"    pm.expect(response.length).to.be.above(0);\r",
+									"\r",
+									"    const product = response[5];\r",
+									"    pm.expect(product).to.be.an('object');\r",
+									"    pm.expect(product).to.haveOwnProperty('id');\r",
+									"    pm.expect(product.id).to.be.a('number');\r",
+									"    pm.expect(product.inStock).to.be.true;\r",
+									"    \r",
+									"    pm.environment.set('productId',product.id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products?results=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "results",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(pm.variables.get('productId'));\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test('Response is an object',()=>{\r",
+									"    pm.expect(response).to.be.a('object');\r",
+									"});\r",
+									"\r",
+									"pm.test('Check Product name',()=>{\r",
+									"    pm.expect(response.name).to.be.a('string');\r",
+									"});\r",
+									"\r",
+									"pm.test('Check Product price',()=>{\r",
+									"    pm.expect(response.price).to.be.a('number');\r",
+									"    pm.expect(response.price).to.be.above(0);\r",
+									"});\r",
+									"\r",
+									"pm.test('Check Product in Stock',()=>{\r",
+									"    pm.expect(response.inStock).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/:productId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								":productId"
+							],
+							"query": [
+								{
+									"key": "product-label",
+									"value": "true",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "{{productId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products from a Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products?results=0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "coffee",
+									"disabled": true
+								},
+								{
+									"key": "results",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Cart",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test('Create cart',()=>{\r",
+									"    pm.expect(response).to.be.an('object');\r",
+									"\r",
+									"    const cart = response;\r",
+									"    pm.expect(cart).to.haveOwnProperty('cartId');\r",
+									"    \r",
+									"    pm.environment.set('cartId',cart.cartId);\r",
+									"    console.log(cart.cartId);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/carts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart By Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/carts/:cartId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"carts",
+								":cartId"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "{{cartId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart Items",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/carts/:cartId/items",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"carts",
+								":cartId",
+								"items"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "{{cartId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add item to cart",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test('Item was cretated',()=>{\r",
+									"    pm.expect(response).to.be.an('object');\r",
+									"    pm.expect(response.created).to.be.true;\r",
+									"    pm.expect(response.itemId).to.be.a('number');\r",
+									"\r",
+									"    pm.expect(response).to.haveOwnProperty('itemId');\r",
+									"    \r",
+									"    pm.environment.set('itemId',response.itemId);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productId\": {{productId}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/carts/:cartId/items",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"carts",
+								":cartId",
+								"items"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "{{cartId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item in Cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/carts/:cartId/items/:ietmId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"carts",
+								":cartId",
+								"items",
+								":ietmId"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "{{cartId}}"
+								},
+								{
+									"key": "ietmId",
+									"value": "{{itemId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete item in cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/carts/:cartId/items/:ietmId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"carts",
+								":cartId",
+								"items",
+								":ietmId"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "{{cartId}}"
+								},
+								{
+									"key": "ietmId",
+									"value": "{{itemId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace item in cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productId\": 4646,\r\n   \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/carts/:cartId/items/:ietmId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"carts",
+								":cartId",
+								"items",
+								":ietmId"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "{{cartId}}"
+								},
+								{
+									"key": "ietmId",
+									"value": "{{itemId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test('Order created',()=>{\r",
+									"    pm.expect(response).to.be.an('object');\r",
+									"    pm.expect(response.created).to.be.true;\r",
+									"    pm.expect(response.orderId).to.be.a('string');\r",
+									"    \r",
+									"    pm.environment.set('orderId',response.orderId);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"cartId\": \"{{cartId}}\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orders/:orderId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "{{orderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"cartId\": \"ygui8QQQkC4DbRrv6Rm3j\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const response = pm.response.json();\r",
+									"pm.test('Error message contains the deleted order id.',() => {\r",
+									"    pm.expect(response).to.haveOwnProperty('error');\r",
+									"    const localOrderId = pm.variables.get('orderId');\r",
+									"    pm.expect(response.error).to.contain(localOrderId);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orders/:orderId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "{{orderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unpdate Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"comment\": \"Deliver to Natalia Lopez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders/:orderId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "{{orderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Missing Authtentification",
+			"item": [
+				{
+					"name": "Missing Header",
+					"item": [
+						{
+							"name": "Create New Order",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"cartId\": \"ygui8QQQkC4DbRrv6Rm3j\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/orders",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Orders",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"cartId\": \"ygui8QQQkC4DbRrv6Rm3j\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/orders",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"pm.test('Error message', () => {",
+									"        pm.expect(response.error).to.eql('Missing Authorization header.')",
+									"});"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Invalid Token",
+					"item": [
+						{
+							"name": "Create New Order",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "8fhg93xkjd38fhg834jdfgjd",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"cartId\": \"ygui8QQQkC4DbRrv6Rm3j\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/orders",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Orders",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "8fhg93xkjd38fhg834jdfgjd",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"cartId\": \"ygui8QQQkC4DbRrv6Rm3j\",\r\n    \"customerName\": \"Natalia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/orders",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const response = pm.response.json();",
+									"pm.test('Error message', () => {",
+									"        pm.expect(response.error).to.eql('Invalid bearer token.')",
+									"});"
+								]
+							}
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const response = pm.response.json();",
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Invalid input",
+			"item": [
+				{
+					"name": "Invalid Category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('Error message', () => {\r",
+									"    pm.expect(response.error).to.have.string(\"Invalid value for query parameter 'category'.\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products?category=coffeed",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "coffeed"
+								},
+								{
+									"key": "results",
+									"value": "100",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Input cero",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"if(pm.environment.name ==='testing'){\r",
+									"    const response = pm.response.json();\r",
+									"    pm.test(\"Status code is 400\", function () {\r",
+									"        pm.response.to.have.status(400);\r",
+									"    });\r",
+									"\r",
+									"    pm.test('Error message', () => {\r",
+									"        const expectedError = \"Invalid value for query parameter 'results'. Must be greater than 0.\";\r",
+									"        pm.expect(response.error).to.eql(expectedError);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products?results=0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "coffeed",
+									"disabled": true
+								},
+								{
+									"key": "results",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Category Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('Error message', () => {\r",
+									"    const expectedError = \"Invalid value for query paramater 'results'. Must be greater than 0.\";\r",
+									"\r",
+									"    pm.expect(response.error).to.eql(expectedError);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products?results=0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "coffeed",
+									"disabled": true
+								},
+								{
+									"key": "results",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products - max",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('Error message', () => {\r",
+									"    pm.expect(response.error).to.have.string(\"Invalid value for query parameter 'results'. Cannot be greater than\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products?results=21",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "results",
+									"value": "21"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products min",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.clear();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('Error message', () => {\r",
+									"    pm.expect(response.error).to.have.string(\"Invalid value for query parameter 'results'.\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products?results=-1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "results",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
